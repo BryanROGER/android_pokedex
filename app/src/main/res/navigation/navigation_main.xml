@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/listPokemonFragment">
+    <fragment
+        android:id="@+id/listPokemonFragment"
+        android:name="com.example.pokedex.ListPokemonFragment"
+        android:label="ListPokemonFragment" >
+        <action
+            android:id="@+id/ListToDetail"
+            app:destination="@id/detailPokemonFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPokemonFragment2"
+        android:name="com.example.pokedex.DetailPokemonFragment"
+        android:label="DetailPokemonFragment" >
+        <argument
+            android:name="pokemon"
+            app:argType="com.example.pokedex.Pokemon" />
+    </fragment>
+</navigation>
