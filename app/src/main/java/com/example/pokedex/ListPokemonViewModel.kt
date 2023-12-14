@@ -18,6 +18,14 @@ class ListPokemonViewModel() :ViewModel() {
         return Pokemons
     }
 
+    fun getPokemonsByName(name :String):MutableLiveData<List<Pokemon>>{
+        viewModelScope.launch {
+            Pokemons.value = PokemonService.PokemonApi.retrofitService.getPokemonsByName(name)
+        }
+        return Pokemons
+    }
+
+
     /*companion object {
         val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")

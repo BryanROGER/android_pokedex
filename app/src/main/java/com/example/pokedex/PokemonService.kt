@@ -30,6 +30,9 @@ interface PokemonService {
     @GET("pokemon/{code}")
     suspend fun getPokemonById(@Path("code")id:Int)
 
+    @GET("pokemon/{code}")
+    suspend fun getPokemonsByName(@Path("code")name: String): List<Pokemon>?
+
     object PokemonApi{
         val retrofitService : PokemonService by lazy { retrofit.create(PokemonService::class.java) }
     }
